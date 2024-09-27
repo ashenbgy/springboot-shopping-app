@@ -5,6 +5,7 @@ This project consists of two microservices built using Spring Boot: **Inventory 
 ## Technologies Used
 - Java 17
 - Spring Boot
+- Spring Cloud
 - Spring Data JPA
 - MySQL
 
@@ -29,6 +30,11 @@ The Shopping Microservice connects to the Inventory Microservice to fetch and di
 **Endpoints:**
 - `GET /api/shopping/products` - Retrieve a list of available products from the Inventory Microservice.
 
-## Database Setup
+### 3. Eureka for Service Discovery
+Both microservices register with Eureka for service discovery.
+
+## Setup
 1. Set up a MySQL database.
 2. Create a database called `inventory_db`.
+3. Start Eureka Server.
+4. Start Inventory and shopping Microservices.
