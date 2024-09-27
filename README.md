@@ -7,8 +7,6 @@ This project consists of two microservices built using Spring Boot: **Inventory 
 - Spring Boot
 - Spring Data JPA
 - MySQL
-- Maven
-- Docker (optional for containerization)
 
 ## Microservices Overview
 
@@ -19,19 +17,18 @@ The Inventory Microservice manages product details and exposes a CRUD API for pr
 - **Price**
 
 **Endpoints:**
-- `GET /products` - Retrieve all products
-- `GET /products/{id}` - Retrieve a product by ID
-- `POST /products` - Create a new product
-- `PUT /products/{id}` - Update an existing product
-- `DELETE /products/{id}` - Delete a product
+- `GET /api/products` - Retrieve all products
+- `GET /api/products/{id}` - Retrieve a product by ID
+- `POST /api/products` - Create a new product
+- `PUT /api/products/{id}` - Update an existing product
+- `DELETE /api/products/{id}` - Delete a product
 
 ### 2. Shopping Microservice
 The Shopping Microservice connects to the Inventory Microservice to fetch and display available products.
 
 **Endpoints:**
-- `GET /available-products` - Retrieve a list of available products from the Inventory Microservice
+- `GET /api/shopping/products` - Retrieve a list of available products from the Inventory Microservice.
 
 ## Database Setup
 1. Set up a MySQL database.
 2. Create a database called `inventory_db`.
-3. Configure the database connection settings in `application.properties`:
