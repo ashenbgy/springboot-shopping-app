@@ -33,6 +33,8 @@ The Shopping Microservice connects to the Inventory Microservice to fetch and di
 ### 3. Eureka for Service Discovery
 Both microservices register with Eureka for service discovery.
 
-## Database Setup
+## Setup
 1. Set up a MySQL database.
 2. Create a database called `inventory_db`.
+3. Start Eureka Server.
+4. Start Inventory and shopping Microservices.
