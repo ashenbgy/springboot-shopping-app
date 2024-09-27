@@ -61,16 +61,4 @@ class ProductServiceImplTest {
         // Then
         assertNull(product);
     }
-
-    @Test
-    void saveProduct() {
-    }
-
-    @Test
-    void updateProduct() {
-    }
-
-    @Test
-    void deleteProduct() {
-    }
 }
