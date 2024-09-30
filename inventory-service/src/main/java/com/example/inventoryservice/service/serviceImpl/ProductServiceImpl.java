@@ -15,14 +15,17 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Override
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
+    @Override
     public Product getProductById(Long id) {
         return productRepository.findById(id).orElse(null);
     }
 
+    @Override
     public Product saveProduct(ProductDto productDto) {
         Product product = new Product();
 
@@ -44,6 +47,7 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.save(existingProduct);
     }
 
+    @Override
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
