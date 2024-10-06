@@ -63,12 +63,12 @@ class ProductServiceImplTest {
         when(productRepository.findById(2L)).thenReturn(Optional.of(product));
 
         // When
-        Product foundProduct = productService.getProductById(2L);
+        Optional<Product> foundProduct = productService.getProductById(2L);
 
         // Then
         assertNotNull(foundProduct);
-        assertEquals(2L, foundProduct.getId());
-        assertEquals("Test Product", foundProduct.getName());
+        assertEquals(2L, foundProduct.get().getId());
+        assertEquals("Test Product", foundProduct.get().getName());
     }
 
     @Test
@@ -77,10 +77,10 @@ class ProductServiceImplTest {
         when(productRepository.findById(2L)).thenReturn(Optional.empty());
 
         // When
-        Product product = productService.getProductById(2L);
+        Optional<Product> product = productService.getProductById(2L);
 
         // Then
-        assertNull(product);
+        assertTrue(product.isEmpty());
     }
 
     @Test

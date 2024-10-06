@@ -3,6 +3,7 @@ package com.example.inventoryservice.controller;
 import com.example.inventoryservice.dto.ProductDto;
 import com.example.inventoryservice.entity.Product;
 import com.example.inventoryservice.service.ProductService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,8 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        Product product = productService.getProductById(id);
+        Product product = productService.getProductById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Product not found"));;;
         return ResponseEntity.ok(product);
     }
 
